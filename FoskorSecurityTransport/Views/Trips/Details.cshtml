@@ -1,0 +1,298 @@
+﻿@model FoskorSecurityTransport.Models.Trip
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Trip</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartingPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartingPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passenger1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyNumber1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyNumber1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passenger2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyNumber2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyNumber2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passenger3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyNumber3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyNumber3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passenger4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyNumber4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyNumber4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supervisor1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supervisor1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Driver)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Driver)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KMOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KMOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KMIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KMIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalKMs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalKMs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capturer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capturer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supervisor2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supervisor2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supervisor3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supervisor3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supervisor4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supervisor4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.noOfPassengers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.noOfPassengers)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TripID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

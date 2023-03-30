@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SecurityTransportTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentName" Type="varchar" MaxLength="255" />
+          <Property Name="Status" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Destination">
+          <Key>
+            <PropertyRef Name="DestinationID" />
+          </Key>
+          <Property Name="DestinationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DestinationName" Type="varchar" MaxLength="255" />
+          <Property Name="Status" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Operator">
+          <Key>
+            <PropertyRef Name="OperatorID" />
+          </Key>
+          <Property Name="OperatorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Surname" Type="varchar" MaxLength="255" />
+          <Property Name="CompanyNumber" Type="varchar" MaxLength="255" />
+          <Property Name="OperatorRole" Type="varchar" MaxLength="255" />
+          <Property Name="Department" Type="varchar" MaxLength="255" />
+          <Property Name="Status" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Reason">
+          <Key>
+            <PropertyRef Name="ReasonID" />
+          </Key>
+          <Property Name="ReasonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReasonName" Type="varchar" MaxLength="255" />
+          <Property Name="Status" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Trip">
+          <Key>
+            <PropertyRef Name="TripID" />
+          </Key>
+          <Property Name="TripID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateOut" Type="date" />
+          <Property Name="DateIn" Type="date" />
+          <Property Name="StartingPoint" Type="varchar" MaxLength="255" />
+          <Property Name="Passenger1" Type="varchar" MaxLength="255" />
+          <Property Name="CompanyNumber1" Type="varchar" MaxLength="255" />
+          <Property Name="Destination1" Type="varchar" MaxLength="255" />
+          <Property Name="Passenger2" Type="varchar" MaxLength="255" />
+          <Property Name="CompanyNumber2" Type="varchar" MaxLength="255" />
+          <Property Name="Destination2" Type="varchar" MaxLength="255" />
+          <Property Name="Passenger3" Type="varchar" MaxLength="255" />
+          <Property Name="CompanyNumber3" Type="varchar" MaxLength="255" />
+          <Property Name="Destination3" Type="varchar" MaxLength="255" />
+          <Property Name="Passenger4" Type="varchar" MaxLength="255" />
+          <Property Name="CompanyNumber4" Type="varchar" MaxLength="255" />
+          <Property Name="Destination4" Type="varchar" MaxLength="255" />
+          <Property Name="Department1" Type="varchar" MaxLength="255" />
+          <Property Name="Supervisor1" Type="varchar" MaxLength="255" />
+          <Property Name="Reason" Type="varchar" MaxLength="255" />
+          <Property Name="Driver" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle" Type="varchar" MaxLength="255" />
+          <Property Name="KMOut" Type="int" />
+          <Property Name="KMIn" Type="int" />
+          <Property Name="TotalKMs" Type="int" />
+          <Property Name="TimeOut" Type="time" Precision="0" />
+          <Property Name="TimeIn" Type="time" Precision="0" />
+          <Property Name="Status" Type="varchar" MaxLength="255" />
+          <Property Name="SDateTime" Type="datetime" />
+          <Property Name="Capturer" Type="varchar" MaxLength="255" />
+          <Property Name="Supervisor2" Type="varchar" MaxLength="255" />
+          <Property Name="Supervisor3" Type="varchar" MaxLength="255" />
+          <Property Name="Supervisor4" Type="varchar" MaxLength="255" />
+          <Property Name="Department2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Department3" Type="nvarchar" MaxLength="255" />
+          <Property Name="Department4" Type="nvarchar" MaxLength="255" />
+          <Property Name="noOfPassengers" Type="int" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Name="VehicleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegistrationNo" Type="varchar" MaxLength="255" />
+          <Property Name="Make" Type="varchar" MaxLength="255" />
+          <Property Name="Model" Type="varchar" MaxLength="255" />
+          <Property Name="Status" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="SecurityTransportTestModelStoreContainer">
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Destination" EntityType="Self.Destination" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Operator" EntityType="Self.Operator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reason" EntityType="Self.Reason" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Trip" EntityType="Self.Trip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehicle" EntityType="Self.Vehicle" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SecurityTransportTestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Destination">
+          <Key>
+            <PropertyRef Name="DestinationID" />
+          </Key>
+          <Property Name="DestinationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DestinationName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Operator">
+          <Key>
+            <PropertyRef Name="OperatorID" />
+          </Key>
+          <Property Name="OperatorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OperatorRole" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Department" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Reason">
+          <Key>
+            <PropertyRef Name="ReasonID" />
+          </Key>
+          <Property Name="ReasonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReasonName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Trip">
+          <Key>
+            <PropertyRef Name="TripID" />
+          </Key>
+          <Property Name="TripID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateOut" Type="DateTime" Precision="0" />
+          <Property Name="DateIn" Type="DateTime" Precision="0" />
+          <Property Name="StartingPoint" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Passenger1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyNumber1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Destination1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Passenger2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyNumber2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Destination2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Passenger3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyNumber3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Destination3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Passenger4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyNumber4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Destination4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Department1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Supervisor1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Driver" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="KMOut" Type="Int32" />
+          <Property Name="KMIn" Type="Int32" />
+          <Property Name="TotalKMs" Type="Int32" />
+          <Property Name="TimeOut" Type="Time" Precision="0" />
+          <Property Name="TimeIn" Type="Time" Precision="0" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Capturer" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Supervisor2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Supervisor3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Supervisor4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Department2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Department3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Department4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="noOfPassengers" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Name="VehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegistrationNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Make" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="SecurityTransportTestEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Destinations" EntityType="Self.Destination" />
+          <EntitySet Name="Operators" EntityType="Self.Operator" />
+          <EntitySet Name="Reasons" EntityType="Self.Reason" />
+          <EntitySet Name="Trips" EntityType="Self.Trip" />
+          <EntitySet Name="Vehicles" EntityType="Self.Vehicle" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SecurityTransportTestModelStoreContainer" CdmEntityContainer="SecurityTransportTestEntities">
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="SecurityTransportTestModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Destinations">
+            <EntityTypeMapping TypeName="SecurityTransportTestModel.Destination">
+              <MappingFragment StoreEntitySet="Destination">
+                <ScalarProperty Name="DestinationID" ColumnName="DestinationID" />
+                <ScalarProperty Name="DestinationName" ColumnName="DestinationName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Operators">
+            <EntityTypeMapping TypeName="SecurityTransportTestModel.Operator">
+              <MappingFragment StoreEntitySet="Operator">
+                <ScalarProperty Name="OperatorID" ColumnName="OperatorID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="CompanyNumber" ColumnName="CompanyNumber" />
+                <ScalarProperty Name="OperatorRole" ColumnName="OperatorRole" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reasons">
+            <EntityTypeMapping TypeName="SecurityTransportTestModel.Reason">
+              <MappingFragment StoreEntitySet="Reason">
+                <ScalarProperty Name="ReasonID" ColumnName="ReasonID" />
+                <ScalarProperty Name="ReasonName" ColumnName="ReasonName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trips">
+            <EntityTypeMapping TypeName="SecurityTransportTestModel.Trip">
+              <MappingFragment StoreEntitySet="Trip">
+                <ScalarProperty Name="TripID" ColumnName="TripID" />
+                <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+                <ScalarProperty Name="StartingPoint" ColumnName="StartingPoint" />
+                <ScalarProperty Name="Passenger1" ColumnName="Passenger1" />
+                <ScalarProperty Name="CompanyNumber1" ColumnName="CompanyNumber1" />
+                <ScalarProperty Name="Destination1" ColumnName="Destination1" />
+                <ScalarProperty Name="Passenger2" ColumnName="Passenger2" />
+                <ScalarProperty Name="CompanyNumber2" ColumnName="CompanyNumber2" />
+                <ScalarProperty Name="Destination2" ColumnName="Destination2" />
+                <ScalarProperty Name="Passenger3" ColumnName="Passenger3" />
+                <ScalarProperty Name="CompanyNumber3" ColumnName="CompanyNumber3" />
+                <ScalarProperty Name="Destination3" ColumnName="Destination3" />
+                <ScalarProperty Name="Passenger4" ColumnName="Passenger4" />
+                <ScalarProperty Name="CompanyNumber4" ColumnName="CompanyNumber4" />
+                <ScalarProperty Name="Destination4" ColumnName="Destination4" />
+                <ScalarProperty Name="Department1" ColumnName="Department1" />
+                <ScalarProperty Name="Supervisor1" ColumnName="Supervisor1" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Driver" ColumnName="Driver" />
+                <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+                <ScalarProperty Name="KMOut" ColumnName="KMOut" />
+                <ScalarProperty Name="KMIn" ColumnName="KMIn" />
+                <ScalarProperty Name="TotalKMs" ColumnName="TotalKMs" />
+                <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+                <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SDateTime" ColumnName="SDateTime" />
+                <ScalarProperty Name="Capturer" ColumnName="Capturer" />
+                <ScalarProperty Name="Supervisor2" ColumnName="Supervisor2" />
+                <ScalarProperty Name="Supervisor3" ColumnName="Supervisor3" />
+                <ScalarProperty Name="Supervisor4" ColumnName="Supervisor4" />
+                <ScalarProperty Name="Department2" ColumnName="Department2" />
+                <ScalarProperty Name="Department3" ColumnName="Department3" />
+                <ScalarProperty Name="Department4" ColumnName="Department4" />
+                <ScalarProperty Name="noOfPassengers" ColumnName="noOfPassengers" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicles">
+            <EntityTypeMapping TypeName="SecurityTransportTestModel.Vehicle">
+              <MappingFragment StoreEntitySet="Vehicle">
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+                <ScalarProperty Name="Make" ColumnName="Make" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
