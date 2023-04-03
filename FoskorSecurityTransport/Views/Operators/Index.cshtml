@@ -1,0 +1,63 @@
+﻿@model IEnumerable<FoskorSecurityTransport.Models.Operator>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OperatorRole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OperatorRole)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OperatorID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OperatorID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OperatorID })
+        </td>
+    </tr>
+}
+
+</table>
