@@ -6,10 +6,8 @@
 
 <h2>Index</h2>
 
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
-@*<table class="table">
+<p>@Html.ActionLink("Create New", "Create")</p>
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.RegistrationNo)
@@ -24,52 +22,10 @@
             @Html.DisplayNameFor(model => model.Status)
         </th>
         <th></th>
-    </tr>*@
-
-<table id="vehicleTable">
-    <thead>
-        <tr>
-            <th>RegistrationNo</th>
-            <th>Make</th>
-            <th>Model</th>
-            <th>Status</th>
-
-        </tr>
-    </thead>
-    </table>
-
-<link href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" />
-
-@section sritps{
-    <script>"//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.js"</script>
-    <script>
-        $(document).ready(function () {
-            $("#vehicleTable").DataTable({
-                "ajax": {
-                    "url" : 
-
-                    }
+    </tr>
 
 
-                }
-
-
-
-            )
-        }
-
-
-    </script>
-    
-    
-    
-    
-    
-    
-    }
-
-
-@*@foreach (var item in Model) {
+@foreach (var item in Model) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.RegistrationNo)
@@ -88,7 +44,7 @@
             @Html.ActionLink("Details", "Details", new { id=item.VehicleID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.VehicleID })
         </td>
-    </tr>*@
+    </tr>
 }
 
 </table>
