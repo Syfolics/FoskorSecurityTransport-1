@@ -36,14 +36,16 @@
         </footer>
     </div>
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-2.0.0.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>  
     <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>   
-    <script>
+    <script type="text/javascript">
+        console.log('js loaded')
         $(document).ready(function () {
             $('.table').DataTable();
-            alert("test")
+            $('.table a').addClass("btn btn-primary");
+            $('.container p>a').addClass("btn btn-primary");
         });
     </script>
 </body>
