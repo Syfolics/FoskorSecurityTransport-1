@@ -11,11 +11,20 @@ namespace FoskorSecurityTransport.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Department
     {
+        [Required]
+        [Display(Name = "Department Id")]
         public int DepartmentID { get; set; }
+
+        [Required]
+        [Display(Name = "Department Name")]
         public string DepartmentName { get; set; }
+
+        [Required]
+        [Display(Name = "Status")]
         public string Status { get; set; }
     }
 }

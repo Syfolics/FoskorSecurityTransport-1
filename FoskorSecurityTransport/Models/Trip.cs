@@ -11,15 +11,33 @@ namespace FoskorSecurityTransport.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Trip
     {
+        [Required]
+        [Display(Name ="Trip Id")]
         public int TripID { get; set; }
+
+        [Required]
+        [Display(Name = "Date out")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> DateOut { get; set; }
+        [Required]
+        [Display(Name = "Date In")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> DateIn { get; set; }
+        [Required]
+        [Display(Name = "Starting point")]
         public string StartingPoint { get; set; }
+        [Required]
+        [Display(Name = "Passenger")]
         public string Passenger1 { get; set; }
+        [Required]
+        [Display(Name = "Company Number")]
         public string CompanyNumber1 { get; set; }
+        [Required]
+        [Display(Name = "Destination")]
         public string Destination1 { get; set; }
         public string Passenger2 { get; set; }
         public string CompanyNumber2 { get; set; }
@@ -30,18 +48,50 @@ namespace FoskorSecurityTransport.Models
         public string Passenger4 { get; set; }
         public string CompanyNumber4 { get; set; }
         public string Destination4 { get; set; }
+        [Required]
+        [Display(Name = "Department")]
         public string Department1 { get; set; }
+        [Required]
+        [Display(Name = "Supervisor")]
         public string Supervisor1 { get; set; }
+        [Required]
+        [Display(Name = "Reason")]
         public string Reason { get; set; }
+        [Required]
+        [Display(Name = "Driver")]
         public string Driver { get; set; }
+        [Required]
+        [Display(Name = "Vehicle")]
         public string Vehicle { get; set; }
+        [Required]
+        [Display(Name = "KM Out")]
         public Nullable<int> KMOut { get; set; }
+        [Required]
+        [Display(Name = "KM in")]
         public Nullable<int> KMIn { get; set; }
+
+        [Required]
+        [Display(Name = "Total KM")]
         public Nullable<int> TotalKMs { get; set; }
+
+        [Required]
+        [Display(Name = "Time Out")]
         public Nullable<System.TimeSpan> TimeOut { get; set; }
+
+        [Required]
+        [Display(Name = "Time in")]
         public Nullable<System.TimeSpan> TimeIn { get; set; }
+        [Required]
+        [Display(Name = "Status")]
         public string Status { get; set; }
+
+        [Required]
+        [Display(Name = "S date time")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> SDateTime { get; set; }
+
+        [Required]
+        [Display(Name = "Capture")]
         public string Capturer { get; set; }
         public string Supervisor2 { get; set; }
         public string Supervisor3 { get; set; }
@@ -49,6 +99,9 @@ namespace FoskorSecurityTransport.Models
         public string Department2 { get; set; }
         public string Department3 { get; set; }
         public string Department4 { get; set; }
+
+        [Required]
+        [Display(Name = "Number of Passengers")]
         public Nullable<int> noOfPassengers { get; set; }
     }
 }

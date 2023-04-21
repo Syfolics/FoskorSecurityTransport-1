@@ -11,15 +11,38 @@ namespace FoskorSecurityTransport.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Operator
     {
+        [Required]
+        [Display(Name = "Operator Id")]
         public int OperatorID { get; set; }
+        [Required]
+        [Display(Name = "Name")]
         public string Name { get; set; }
+        [Required]
+        [Display(Name = "Surname")]
         public string Surname { get; set; }
+        [Required]
+        [Display(Name = "Company Number")]
         public string CompanyNumber { get; set; }
+
+        [Required]
+        [Display(Name = "Operator Role")]
         public string OperatorRole { get; set; }
+
+        [Required]
+        [Display(Name = "Department")]
         public string Department { get; set; }
+
+        [Required]
+        [Display(Name = "Status")]
         public string Status { get; set; }
+
+       
+        
+       
+
     }
 }

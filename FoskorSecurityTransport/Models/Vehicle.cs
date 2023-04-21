@@ -11,13 +11,25 @@ namespace FoskorSecurityTransport.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Vehicle
     {
+        [Required]
+        [Display(Name = "Vehicle Id")]
         public int VehicleID { get; set; }
+        [Required]
+        [Display(Name = "Reistration number")]
         public string RegistrationNo { get; set; }
+
+        [Required]
+        [Display(Name = "Make")]
         public string Make { get; set; }
+        [Required]
+        [Display(Name = "Model")]
         public string Model { get; set; }
+        [Required]
+        [Display(Name = "Status")]
         public string Status { get; set; }
     }
 }
