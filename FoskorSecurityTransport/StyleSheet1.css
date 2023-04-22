@@ -30,7 +30,12 @@
 
         font-size:20px;
         font-family:sans-serif;
-        text-align:initial;
+        text-align:initial
         position:relative;
 
+    }
+    bt{
+
+        background-color:blue;
+        font-size:25px;
     }
