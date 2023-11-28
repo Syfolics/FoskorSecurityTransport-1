@@ -13,29 +13,24 @@
     position:relative;
 
 }
-    .background::before {
+.background::before {
         content: '';
         background-image: url('content/transportation-threats-2.png');
-        background-repeat:no-repeat;
-        background-size:auto;
-        background-position:center;
-        position:absolute;
-        top:0;
-        left:0;
-        bottom:0;
-        right:0;
-        opacity:0.35;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0.35;
+       
     }
-    h1{
-
-        font-size:20px;
-        font-family:sans-serif;
-        text-align:initial
-        position:relative;
-
-    }
-    bt{
-
-        background-color:blue;
-        font-size:25px;
-    }
+h1 {
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align: center;
+    position: relative;
+}
+    

@@ -12,6 +12,7 @@ namespace FoskorSecurityTransport.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
 
     public partial class Operator
     {
@@ -39,10 +40,7 @@ namespace FoskorSecurityTransport.Models
         [Required]
         [Display(Name = "Status")]
         public string Status { get; set; }
-
-       
         
-       
 
     }
 }
