@@ -823,6 +823,9 @@
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\Tables.cs" />
+    <Compile Include="ViewModel\TripViewModel.cs" />
+    <Compile Include="ViewModel\VehicleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
