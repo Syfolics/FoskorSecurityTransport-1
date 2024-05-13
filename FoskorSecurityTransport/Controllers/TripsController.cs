@@ -48,10 +48,8 @@ namespace FoskorSecurityTransport.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "TripID,DateOut,DateIn,StartingPoint,Passenger1,CompanyNumber1,Destination1,Passenger2,CompanyNumber2,Destination2,Passenger3,CompanyNumber3,Destination3,Passenger4,CompanyNumber4,Destination4,Department1,Supervisor1,Reason,Driver,Vehicle,KMOut,KMIn,TotalKMs,TimeOut,TimeIn,Status,SDateTime,Capturer,Supervisor2,Supervisor3,Supervisor4,Department2,Department3,Department4,noOfPassengers")] Trip trip)
         {
-
             {
-                 
-                
+                                 
                 db.Trips.Add(trip);
                 db.SaveChanges();
                 return RedirectToAction("Index");

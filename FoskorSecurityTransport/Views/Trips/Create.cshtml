@@ -71,7 +71,22 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Department1, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Department1, new { htmlAttributes = new { @class = "form-control" } })
+                @{
+                    FoskorSecurityTransport.Models.SecurityTransportTestEntities Depart = new FoskorSecurityTransport.Models.SecurityTransportTestEntities();
+                    List<FoskorSecurityTransport.Models.Department> listDepartment = Depart.Departments.ToList();
+
+                    <select value="DepartmentID" class="form-control">
+                        <option value="" disabled hidden selected>Select Department</option>
+                        @{ foreach (FoskorSecurityTransport.Models.Department s in listDepartment)
+
+                            {
+                                <option value="@s.DepartmentID">@s.DepartmentName</option>
+                            }
+                        }
+
+                    </select>
+                }
+                @*@Html.EditorFor(model => model.Department1, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.Department1, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -278,8 +293,23 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Vehicle, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*@Html.EditorFor(model => model.Vehicle, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessageFor(model => model.Vehicle, "", new { @class = "text-danger" })*@
+                @{
+                    FoskorSecurityTransport.Models.SecurityTransportTestEntities db = new FoskorSecurityTransport.Models.SecurityTransportTestEntities();
+                    List<FoskorSecurityTransport.Models.Vehicle> listVehicle = db.Vehicles.ToList();
+                    
+                    <select value="VehicleID" class="form-control">
+                        <option value="" disabled hidden selected>Select Vehicle</option>
+                        @{ foreach(FoskorSecurityTransport.Models.Vehicle s in listVehicle )
+
+                            {
+                                <option value="@s.VehicleID">@s.Make</option>
+                            }
+                         }
+
+                    </select>
+                }
+                @*@Html.EditorFor(model => model.Vehicle, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.Vehicle, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -361,16 +391,6 @@
         </div>
 
         <!--Additionals -->
-
-
-
-
-
-
-
-
-
-
         <div class="form-group">
             @Html.LabelFor(model => model.noOfPassengers, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

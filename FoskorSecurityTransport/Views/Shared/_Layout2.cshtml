@@ -117,13 +117,25 @@
                     </li>
                     <li class="sub-menu">
                         <a href="javascript:;" class="">
-                            <i class="icon_desktop"></i>
+                            <i class="icon-form-l"></i>
                             <span>Departments</span>
                             <span class="menu-arrow arrow_carrot-right"></span>
                         </a>
                         <ul class="sub">
                             <li>@Html.ActionLink("View Departments", "Index", "Departments")</li>
                             <li>@Html.ActionLink("Add Department", "Create", "Departments")</li>
+
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="">
+                            <i class="icon_book"></i>
+                            <span>Vehicles</span>
+                            <span class="menu-arrow arrow_carrot-right"></span>
+                        </a>
+                        <ul class="sub">
+                            <li>@Html.ActionLink("View Vehicles", "Index", "Vehicles")</li>
+                            <li>@Html.ActionLink("Add Vehicle", "Create", "Vehicles")</li>
 
                         </ul>
                     </li>
@@ -208,6 +220,14 @@
 
     <script src="js/scripts.js"></script>
     <script src="~/Content/_DisplayTheme/js/scripts.js"></script>
+    <script type="text/javascript">
+        console.log('js loaded')
+        $(document).ready(function () {
+            $('.table').DataTable({ dom: 'Bfrtip', "buttons": ['excel'] });
+            $('.table a').addClass("btn btn-primary");
+            $('.container p>a').addClass("btn btn-primary");
+        });
+    </script>
 
     @*<script src="~/Scripts/jquery-2.0.0.min.js"></script>
         <script src="~/Scripts/bootstrap.min.js"></script>

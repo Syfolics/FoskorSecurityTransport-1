@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Vehicle List";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
 <h2>Index</h2>
@@ -10,8 +11,8 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.RegistrationNo)
+            <th style="font-weight:bold">
+                Registration
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Make)
