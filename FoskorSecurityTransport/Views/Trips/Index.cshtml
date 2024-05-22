@@ -1,4 +1,6 @@
-﻿@model IEnumerable<FoskorSecurityTransport.Models.Trip>
+﻿@*@model IEnumerable<FoskorSecurityTransport.Models.Trip>*@
+@model PagedList.IPagedList<FoskorSecurityTransport.Models.Trip>
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Index";
@@ -14,109 +16,60 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DateOut)
+                @Html.Label("Date Out")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateIn)
+                @Html.Label("Date in")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StartingPoint)
+                @Html.Label("Starting Point")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Passenger1)
+                @Html.Label("Passenger")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CompanyNumber1)
+                @Html.Label("Company Number")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Destination1)
+                @Html.Label("Destination")
             </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.Passenger2)
-            </th>
+ 
             <th>
-                @Html.DisplayNameFor(model => model.CompanyNumber2)
+                @Html.Label("Reason")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Destination2)
+                @Html.Label("Driver")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Passenger3)
+                @Html.Label("Vehicle")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CompanyNumber3)
+                @Html.Label("KMOut")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Destination3)
+                @Html.Label("KMIn")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Passenger4)
+                @Html.Label("TotalKMs")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CompanyNumber4)
+                @Html.Label("TimeOut")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Destination4)
+                @Html.Label("TimeIn")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Department1)
+                @Html.Label("Status")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Supervisor1)
-            </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.Reason)
+                @Html.Label("SDateTime")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Driver)
+                @Html.Label("Capturer")
             </th>
+ 
             <th>
-                @Html.DisplayNameFor(model => model.Vehicle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.KMOut)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.KMIn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalKMs)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TimeOut)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TimeIn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SDateTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Capturer)
-            </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.Supervisor2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Supervisor3)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Supervisor4)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Department2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Department3)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Department4)
-            </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.noOfPassengers)
+               @Html.Label("noOfPassengers")
             </th>
             <th></th>
         </tr>
@@ -144,38 +97,38 @@
                     @Html.DisplayFor(modelItem => item.Destination1)
                 </td>
                 @*<td>
-            @Html.DisplayFor(modelItem => item.Passenger2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompanyNumber2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Destination2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Passenger3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompanyNumber3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Destination3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Passenger4)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompanyNumber4)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Destination4)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Department1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Supervisor1)
-        </td>*@
+                        @Html.DisplayFor(modelItem => item.Passenger2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyNumber2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Destination2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Passenger3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyNumber3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Destination3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Passenger4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyNumber4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Destination4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Supervisor1)
+                    </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Reason)
                 </td>
@@ -210,23 +163,23 @@
                     @Html.DisplayFor(modelItem => item.Capturer)
                 </td>
                 @*<td>
-            @Html.DisplayFor(modelItem => item.Supervisor2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Supervisor3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Supervisor4)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Department2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Department3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Department4)
-        </td>*@
+                        @Html.DisplayFor(modelItem => item.Supervisor2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Supervisor3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Supervisor4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department4)
+                    </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.noOfPassengers)
                 </td>
@@ -239,3 +192,11 @@
         }
     </tbody>
 </table>
+<div style="text-align: center">
+    <p>
+        @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    </p>
+    <p style="margin-top: -25px">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </p>
+</div>

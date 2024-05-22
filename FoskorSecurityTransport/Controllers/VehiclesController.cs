@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FoskorSecurityTransport.Models;
+using PagedList;
 
 namespace FoskorSecurityTransport.Controllers
 {
@@ -15,9 +17,11 @@ namespace FoskorSecurityTransport.Controllers
         private SecurityTransportTestEntities db = new SecurityTransportTestEntities();
 
         // GET: Vehicles
-        public ActionResult Index()
+        public ActionResult Index(int page=1)
         {
-            return View(db.Vehicles.ToList());
+            int pageSize = 10;
+            return View(db.Vehicles.OrderByDescending(x => x.Status).ToPagedList(page, pageSize));
+
         }
 
         // GET: Vehicles/Details/5

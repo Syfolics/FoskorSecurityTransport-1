@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FoskorSecurityTransport.Models;
+using PagedList;
 
 namespace FoskorSecurityTransport.Controllers
 {
@@ -15,10 +16,14 @@ namespace FoskorSecurityTransport.Controllers
         private SecurityTransportTestEntities db = new SecurityTransportTestEntities();
 
         // GET: Departments
-        public ActionResult Index()
-        {
-            return View(db.Departments.ToList());
-        }
+
+            public ActionResult Index(int page = 1)
+            {
+                int pageSize = 3;
+                return View(db.Departments.OrderByDescending(x=>x.DepartmentName).ToPagedList(page, pageSize));
+            }
+
+
 
         // GET: Departments/Details/5
         public ActionResult Details(int? id)

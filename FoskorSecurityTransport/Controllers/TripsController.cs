@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using PagedList;
 
 
 
@@ -14,9 +15,11 @@ namespace FoskorSecurityTransport.Controllers
         private Vehicle dbVehicle = new Vehicle();
 
         // GET: Trips
-        public ActionResult Index()
+        public ActionResult Index(int page=1)
         {
-            return View(db.Trips.ToList());
+            int pageSize = 10;
+            return View(db.Trips.OrderByDescending(x => x.DateOut).ToPagedList(page, pageSize));
+          
         }
 
         // GET: Trips/Details/5

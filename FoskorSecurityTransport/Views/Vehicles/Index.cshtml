@@ -1,4 +1,6 @@
-﻿@model IEnumerable<FoskorSecurityTransport.Models.Vehicle>
+﻿@*@model IEnumerable<FoskorSecurityTransport.Models.Vehicle>*@
+@model PagedList.IPagedList<FoskorSecurityTransport.Models.Vehicle>
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Vehicle List";
@@ -15,13 +17,13 @@
                 Registration
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Make)
+                @Html.Label("Make")               
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Model)
+             @Html.Label("Model")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Status)
+               @Html.Label("Status")
             </th>
             <th></th>
         </tr>
@@ -53,3 +55,11 @@
     </tbody>
 
 </table>
+<div style="text-align: center">
+    <p>
+        @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    </p>
+    <p style="margin-top: -25px">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </p>
+</div>
